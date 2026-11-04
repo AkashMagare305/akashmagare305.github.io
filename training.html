@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Magare Industries | Training Center</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ font-family:Arial,sans-serif;
+ background:#08111f;
+ color:white;
+}
+header{
+ padding:22px 16px;
+ background:linear-gradient(120deg,#102b49,#087b80);
+}
+header h1{margin:0;font-size:27px}
+header p{color:#d9f5f5}
+.back{
+ display:inline-block;
+ margin-top:12px;
+ color:white;
+ text-decoration:none;
+ background:#ffffff22;
+ padding:10px 16px;
+ border-radius:8px;
+}
+.container{max-width:1100px;margin:auto;padding:20px}
+.title{font-size:25px;color:#51e0d0}
+.grid{
+ display:grid;
+ grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+ gap:16px;
+}
+.card{
+ background:#14243a;
+ border:1px solid #29445f;
+ border-radius:14px;
+ padding:20px;
+}
+.icon{font-size:38px}
+.card h2{font-size:19px;color:#63e6d7}
+.card p{color:#c5d1df;line-height:1.6}
+button{
+ background:#08a89a;
+ color:white;
+ border:0;
+ padding:12px 16px;
+ border-radius:8px;
+ font-weight:bold;
+ cursor:pointer;
+}
+.detail{
+ display:none;
+ background:#102c40;
+ border:1px solid #36b9ad;
+ border-radius:12px;
+ padding:20px;
+ margin-top:20px;
+ line-height:1.8;
+}
+footer{
+ text-align:center;
+ padding:25px;
+ color:#9eafc2;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>MAGARE INDUSTRIES</h1>
+<p>Industrial Training & EV Manufacturing Learning Center</p>
+<a class="back" href="index.html">← Back to Home</a>
+</header>
+
+<div class="container">
+
+<h2 class="title">Professional Training Programs</h2>
+<p>Automotive, EV Assembly aur Paint Shop ki practical knowledge ek jagah.</p>
+
+<div class="grid">
+
+<div class="card">
+<div class="icon">🏍️</div>
+<h2>EV Scooter Training</h2>
+<p>Electric scooter ke components, working principle aur assembly process.</p>
+<button onclick="show('ev')">Explore Training</button>
+</div>
+
+<div class="card">
+<div class="icon">🔋</div>
+<h2>Battery Pack Training</h2>
+<p>Battery components, BMS, safety systems aur testing ki basic knowledge.</p>
+<button onclick="show('battery')">Explore Training</button>
+</div>
+
+<div class="card">
+<div class="icon">⚙️</div>
+<h2>Motor & Controller</h2>
+<p>Hub motor, controller, throttle aur electrical connections.</p>
+<button onclick="show('motor')">Explore Training</button>
+</div>
+
+<div class="card">
+<div class="icon">🎨</div>
+<h2>Automotive Paint Shop</h2>
+<p>ACED, ED coating, primer, basecoat, topcoat aur paint defects.</p>
+<button onclick="show('paint')">Explore Training</button>
+</div>
+
+<div class="card">
+<div class="icon">🔍</div>
+<h2>Quality Management</h2>
+<p>7 QC Tools, 5 Why, Kaizen, Poka-Yoke aur inspection methods.</p>
+<button onclick="show('quality')">Explore Training</button>
+</div>
+
+<div class="card">
+<div class="icon">🛠️</div>
+<h2>Assembly & Maintenance</h2>
+<p>Assembly process, tools, TPM aur preventive maintenance.</p>
+<button onclick="show('assembly')">Explore Training</button>
+</div>
+
+</div>
+
+<div class="detail" id="detail">
+<h2 id="heading"></h2>
+<div id="content"></div>
+<button onclick="closeDetail()">Close</button>
+</div>
+
+</div>
+
+<footer>
+© 2026 Magare Industries | Industrial Learning Portal
+</footer>
+
+<script>
+const data={
+ev:{
+title:"EV Scooter Training",
+text:"<ul><li>EV scooter components introduction</li><li>Chassis and body assembly</li><li>Motor installation overview</li><li>Controller and wiring overview</li><li>Final inspection and testing</li></ul>"
+},
+battery:{
+title:"Battery Pack Training",
+text:"<ul><li>Battery cell introduction</li><li>Battery pack components</li><li>BMS working principle</li><li>Battery safety and inspection</li><li>Charging system overview</li></ul>"
+},
+motor:{
+title:"Motor & Controller Training",
+text:"<ul><li>Hub motor introduction</li><li>BLDC motor working principle</li><li>Controller functions</li><li>Throttle and display connections</li><li>Basic fault identification</li></ul>"
+},
+paint:{
+title:"Automotive Paint Shop Training",
+text:"<ul><li>ACED process overview</li><li>ED coating process</li><li>Primer, Basecoat and Topcoat</li><li>Paint defects and identification</li><li>Inspection and quality checks</li></ul>"
+},
+quality:{
+title:"Quality Management Training",
+text:"<ul><li>7 QC Tools</li><li>5 Why Analysis</li><li>Kaizen and Poka-Yoke</li><li>Process and product inspection</li><li>Root Cause Analysis</li></ul>"
+},
+assembly:{
+title:"Assembly & Maintenance Training",
+text:"<ul><li>Assembly line overview</li><li>Hand tools introduction</li><li>TPM basics</li><li>Preventive maintenance</li><li>Safety and SOP</li></ul>"
+}
+};
+
+function show(id){
+ document.getElementById("heading").innerHTML=data[id].title;
+ document.getElementById("content").innerHTML=data[id].text;
+ document.getElementById("detail").style.display="block";
+ document.getElementById("detail").scrollIntoView({behavior:"smooth"});
+}
+function closeDetail(){
+ document.getElementById("detail").style.display="none";
+}
+</script>
+
+</body>
+</html>
