@@ -3,69 +3,148 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Magare Industries | Training Center</title>
+<meta name="description" content="Advanced technical training in automotive manufacturing, EV engineering, paint shop, quality, maintenance and production management.">
+<title>Advanced Training Centre | Magare Industries</title>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{box-sizing:border-box}
-body{
- margin:0;
- font-family:Arial,sans-serif;
- background:#08111f;
- color:white;
+:root {
+ --navy:#071525;
+ --blue:#0878f9;
+ --cyan:#20c7e8;
+ --light:#f3f6fa;
+ --text:#172438;
+ --muted:#68778b;
+ --white:#fff;
 }
-header{
- padding:22px 16px;
- background:linear-gradient(120deg,#102b49,#087b80);
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;color:var(--text);background:#fff}
+a{text-decoration:none;color:inherit}
+.container{width:min(1160px,92%);margin:auto}
+
+header{background:#071525;color:white;position:sticky;top:0;z-index:100}
+.nav{min-height:75px;display:flex;justify-content:space-between;align-items:center;gap:15px}
+.logo{font:700 22px 'Space Grotesk'}
+.logo span{color:#25c4e8}
+.logo small{display:block;font:10px 'DM Sans';letter-spacing:4px;color:#aabbd0}
+nav{display:flex;gap:22px;align-items:center}
+nav a{font-size:12px;font-weight:700;color:#d6e2ef}
+nav a:hover{color:#20c7e8}
+.home-btn{background:#0878f9;padding:12px 17px;border-radius:5px}
+
+.hero{
+ background:linear-gradient(100deg,#061526f5,#071b32c9),
+ url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=1800&q=85') center/cover;
+ color:white;padding:100px 0 90px;
 }
-header h1{margin:0;font-size:27px}
-header p{color:#d9f5f5}
-.back{
- display:inline-block;
- margin-top:12px;
- color:white;
- text-decoration:none;
- background:#ffffff22;
- padding:10px 16px;
- border-radius:8px;
+.tag{font-size:11px;font-weight:800;letter-spacing:3px;color:#29c7e9;text-transform:uppercase;margin-bottom:18px}
+.hero h1{font:700 clamp(40px,7vw,75px)/1.05 'Space Grotesk';letter-spacing:-2px;max-width:850px}
+.hero h1 span{color:#25c4e8}
+.hero p{max-width:700px;color:#c5d2e1;font-size:16px;line-height:1.9;margin-top:25px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:32px}
+.btn{display:inline-block;padding:15px 22px;border-radius:5px;font-size:12px;font-weight:800;letter-spacing:1px}
+.primary{background:#0878f9;color:white}
+.outline{border:1px solid #9fb2c9;color:white}
+.hero-bottom{margin-top:65px;padding-top:25px;border-top:1px solid #ffffff30;color:#9fb4ca;font-size:11px;letter-spacing:2px}
+
+section{padding:75px 0}
+.section-tag{color:#0878f9;font-size:11px;font-weight:800;letter-spacing:3px;text-transform:uppercase;margin-bottom:12px}
+h2{font:700 clamp(29px,4vw,43px)/1.15 'Space Grotesk';letter-spacing:-1px;margin-bottom:16px}
+.intro{max-width:760px;color:var(--muted);font-size:15px;line-height:1.85}
+.center{text-align:center}
+.center .intro{margin:auto}
+
+.overview{background:#0b1c31;color:white;padding:30px 0}
+.overview-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.overview-item{text-align:center;padding:12px}
+.overview-item strong{font:700 27px 'Space Grotesk';color:#28c4e8;display:block}
+.overview-item span{font-size:11px;color:#b7c6d8;letter-spacing:1px;text-transform:uppercase}
+
+.path-section{background:#f3f6fa}
+.path-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:35px}
+.path-card{background:white;padding:25px;border:1px solid #e1e8f0;border-radius:8px;transition:.2s}
+.path-card:hover{transform:translateY(-4px);box-shadow:0 12px 28px #0c294315}
+.path-card .number{font:700 28px 'Space Grotesk';color:#0878f9}
+.path-card h3{font:700 19px 'Space Grotesk';margin:10px 0}
+.path-card p{font-size:13px;line-height:1.7;color:var(--muted)}
+.path-card a{display:inline-block;margin-top:16px;color:#0878f9;font-size:11px;font-weight:800}
+
+.modules{background:white}
+.module-list{display:grid;gap:18px;margin-top:35px}
+.module{
+ border:1px solid #e1e8f0;border-radius:9px;
+ overflow:hidden;background:#fff;
 }
-.container{max-width:1100px;margin:auto;padding:20px}
-.title{font-size:25px;color:#51e0d0}
-.grid{
- display:grid;
- grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
- gap:16px;
+.module summary{
+ cursor:pointer;list-style:none;
+ display:flex;align-items:center;justify-content:space-between;
+ gap:20px;padding:23px 25px;
+ background:#f8fafc;
 }
-.card{
- background:#14243a;
- border:1px solid #29445f;
- border-radius:14px;
- padding:20px;
+.module summary::-webkit-details-marker{display:none}
+.module summary:hover{background:#eef5fc}
+.module-heading{display:flex;align-items:center;gap:18px}
+.module-number{width:45px;height:45px;border-radius:7px;background:#e7f2ff;color:#0878f9;display:grid;place-items:center;font:700 17px 'Space Grotesk';flex-shrink:0}
+.module h3{font:700 19px 'Space Grotesk'}
+.module small{display:block;color:#78889a;font-size:11px;margin-top:5px}
+.plus{font-size:25px;color:#0878f9}
+.module-content{padding:25px;border-top:1px solid #e5ebf2}
+.module-content>p{font-size:14px;line-height:1.8;color:var(--muted);margin-bottom:20px}
+.lesson-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
+.lesson{background:#f3f6fa;padding:17px;border-radius:6px}
+.lesson h4{font:700 14px 'Space Grotesk';margin-bottom:8px;color:#12304f}
+.lesson p{font-size:12px;line-height:1.75;color:#68778b}
+.learning-note{background:#eaf4ff;border-left:3px solid #0878f9;padding:16px;margin-top:18px;font-size:12px;line-height:1.8;color:#34516d}
+
+.defects{background:#f3f6fa}
+.defect-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:30px}
+.defect{background:white;padding:20px;border:1px solid #e3eaf2;border-radius:7px}
+.defect strong{font:700 15px 'Space Grotesk'}
+.defect p{font-size:12px;color:var(--muted);line-height:1.7;margin-top:8px}
+
+.quality-tools{background:#0b1c31;color:white}
+.quality-tools .intro{color:#b9c8d9}
+.tool-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-top:32px}
+.tool{background:#ffffff0c;border:1px solid #ffffff20;border-radius:7px;padding:18px}
+.tool strong{color:#27c5e8;font:700 16px 'Space Grotesk'}
+.tool p{color:#c0ccda;font-size:12px;line-height:1.7;margin-top:7px}
+
+.career{background:white}
+.career-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
+.career-card{padding:22px;border:1px solid #e1e8f0;border-radius:8px}
+.career-card h3{font:700 17px 'Space Grotesk';margin-bottom:9px}
+.career-card p{font-size:12px;color:var(--muted);line-height:1.8}
+
+.disclaimer{background:#fff8e9;border:1px solid #f2dfb5;padding:18px;border-radius:7px;margin-top:30px;font-size:12px;line-height:1.8;color:#755b28}
+
+.cta{background:linear-gradient(120deg,#0878f9,#0751ad);color:white;text-align:center}
+.cta p{color:#e0edff;line-height:1.8;margin:15px auto 25px;max-width:650px;font-size:14px}
+.cta .btn{background:white;color:#075ab9}
+
+footer{background:#04101e;color:#aebed0;padding:27px 0;font-size:12px}
+.footer-row{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+footer strong{color:white}
+
+@media(max-width:800px){
+ nav{gap:10px}
+ nav a{font-size:10px}
+ .path-grid,.career-grid{grid-template-columns:1fr 1fr}
+ .overview-grid{grid-template-columns:repeat(2,1fr)}
+ .tool-grid{grid-template-columns:repeat(2,1fr)}
 }
-.icon{font-size:38px}
-.card h2{font-size:19px;color:#63e6d7}
-.card p{color:#c5d1df;line-height:1.6}
-button{
- background:#08a89a;
- color:white;
- border:0;
- padding:12px 16px;
- border-radius:8px;
- font-weight:bold;
- cursor:pointer;
-}
-.detail{
- display:none;
- background:#102c40;
- border:1px solid #36b9ad;
- border-radius:12px;
- padding:20px;
- margin-top:20px;
- line-height:1.8;
-}
-footer{
- text-align:center;
- padding:25px;
- color:#9eafc2;
+@media(max-width:560px){
+ .nav{padding:12px 0;align-items:flex-start;flex-direction:column}
+ nav{width:100%;flex-wrap:wrap;gap:13px}
+ nav a{font-size:10px}
+ .hero{padding:75px 0}
+ section{padding:60px 0}
+ .path-grid,.career-grid,.defect-grid{grid-template-columns:1fr}
+ .lesson-grid{grid-template-columns:1fr}
+ .module summary{padding:17px}
+ .module h3{font-size:16px}
+ .module-content{padding:17px}
 }
 </style>
 </head>
@@ -73,112 +152,361 @@ footer{
 <body>
 
 <header>
-<h1>MAGARE INDUSTRIES</h1>
-<p>Industrial Training & EV Manufacturing Learning Center</p>
-<a class="back" href="index.html">← Back to Home</a>
+ <div class="container nav">
+  <a class="logo" href="index.html">MAGARE<span> INDUSTRIES</span><small>ADVANCED TRAINING CENTRE</small></a>
+  <nav>
+   <a href="index.html">HOME</a>
+   <a href="#programs">PROGRAMS</a>
+   <a href="#modules">TRAINING MODULES</a>
+   <a href="#quality">QUALITY</a>
+   <a class="home-btn" href="products.html">PRODUCTS</a>
+  </nav>
+ </div>
 </header>
 
-<div class="container">
+<main>
 
-<h2 class="title">Professional Training Programs</h2>
-<p>Automotive, EV Assembly aur Paint Shop ki practical knowledge ek jagah.</p>
+<section class="hero">
+ <div class="container">
+  <div class="tag">Industrial Knowledge • Technical Excellence</div>
+  <h1>ADVANCED<br><span>TECHNICAL</span><br>TRAINING CENTRE.</h1>
+  <p>
+   Explore structured technical learning across automotive manufacturing,
+   electric vehicle technology, paint shop engineering, quality management,
+   industrial maintenance, automation and production leadership.
+  </p>
+  <div class="hero-actions">
+   <a class="btn primary" href="#modules">EXPLORE TRAINING MODULES →</a>
+   <a class="btn outline" href="#programs">VIEW LEARNING PATHS</a>
+  </div>
+  <div class="hero-bottom">ENGINEERING KNOWLEDGE / INDUSTRIAL SKILLS / CONTINUOUS IMPROVEMENT</div>
+ </div>
+</section>
 
-<div class="grid">
-
-<div class="card">
-<div class="icon">🏍️</div>
-<h2>EV Scooter Training</h2>
-<p>Electric scooter ke components, working principle aur assembly process.</p>
-<button onclick="show('ev')">Explore Training</button>
+<div class="overview">
+ <div class="container overview-grid">
+  <div class="overview-item"><strong>08</strong><span>Core Learning Areas</span></div>
+  <div class="overview-item"><strong>40+</strong><span>Technical Topics</span></div>
+  <div class="overview-item"><strong>07</strong><span>Quality Tools</span></div>
+  <div class="overview-item"><strong>01</strong><span>Learning Destination</span></div>
+ </div>
 </div>
 
-<div class="card">
-<div class="icon">🔋</div>
-<h2>Battery Pack Training</h2>
-<p>Battery components, BMS, safety systems aur testing ki basic knowledge.</p>
-<button onclick="show('battery')">Explore Training</button>
+<section class="path-section" id="programs">
+ <div class="container">
+  <div class="section-tag">Learning Pathways</div>
+  <h2>Choose Your Engineering Domain.</h2>
+  <p class="intro">Start with fundamentals and progress toward advanced concepts, process understanding, inspection methods and continuous improvement.</p>
+
+  <div class="path-grid">
+   <div class="path-card">
+    <div class="number">01</div>
+    <h3>Automotive Paint Shop</h3>
+    <p>Understand pretreatment, electro-deposition, paint application, curing, inspection and paint defects.</p>
+    <a href="#paint">EXPLORE MODULE →</a>
+   </div>
+   <div class="path-card">
+    <div class="number">02</div>
+    <h3>EV Engineering</h3>
+    <p>Learn electric vehicle architecture, battery concepts, motors, controllers, charging and safety principles.</p>
+    <a href="#ev">EXPLORE MODULE →</a>
+   </div>
+   <div class="path-card">
+    <div class="number">03</div>
+    <h3>Quality Engineering</h3>
+    <p>Study inspection systems, 7 QC tools, root cause analysis, 8D, FMEA and process control.</p>
+    <a href="#quality">EXPLORE MODULE →</a>
+   </div>
+   <div class="path-card">
+    <div class="number">04</div>
+    <h3>Mechanical Maintenance</h3>
+    <p>Understand equipment, bearings, pumps, motors, preventive maintenance and TPM concepts.</p>
+    <a href="#mechanical">EXPLORE MODULE →</a>
+   </div>
+   <div class="path-card">
+    <div class="number">05</div>
+    <h3>Electrical & Automation</h3>
+    <p>Learn electrical fundamentals, PLC concepts, sensors, VFDs, robotics and industrial automation.</p>
+    <a href="#electrical">EXPLORE MODULE →</a>
+   </div>
+   <div class="path-card">
+    <div class="number">06</div>
+    <h3>Production Management</h3>
+    <p>Study SOP, production planning, DWM, LPA, 5S, Kaizen, team coordination and performance.</p>
+    <a href="#production">EXPLORE MODULE →</a>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="modules" id="modules">
+ <div class="container">
+  <div class="section-tag">Technical Curriculum</div>
+  <h2>Explore the Complete Training Library.</h2>
+  <p class="intro">Select any training chapter to explore its topics, technical fundamentals, important parameters and learning objectives.</p>
+
+  <div class="module-list">
+
+   <details class="module" id="paint" open>
+    <summary>
+     <div class="module-heading">
+      <div class="module-number">01</div>
+      <div><h3>Automotive Paint Shop Engineering</h3><small>Surface preparation • Pretreatment • E-coat • Painting • Inspection</small></div>
+     </div>
+     <span class="plus">+</span>
+    </summary>
+    <div class="module-content">
+     <p>Study the complete automotive paint shop process, from incoming body inspection and surface preparation to final paint quality evaluation.</p>
+     <div class="lesson-grid">
+      <div class="lesson"><h4>01. Paint Shop Fundamentals</h4><p>Purpose of automotive painting, corrosion protection, appearance requirements, process flow, paint materials and basic terminology.</p></div>
+      <div class="lesson"><h4>02. Pretreatment Process</h4><p>Cleaning, degreasing, rinsing, surface conditioning, conversion coating, bath monitoring concepts and process purpose.</p></div>
+      <div class="lesson"><h4>03. Electro-Deposition (ED)</h4><p>ED coating principles, bath composition concepts, film formation, ultrafiltration, rinsing stages, curing and inspection.</p></div>
+      <div class="lesson"><h4>04. Paint Mixing Room</h4><p>Paint storage, material identification, batch traceability, viscosity concepts, mixing records, filtration and material handling.</p></div>
+      <div class="lesson"><h4>05. Primer & Top Coat</h4><p>Primer purpose, basecoat, clearcoat, application methods, film appearance, colour matching and coating characteristics.</p></div>
+      <div class="lesson"><h4>06. Paint Quality Inspection</h4><p>Visual inspection, gloss, colour variation, film thickness, adhesion testing concepts and defect classification.</p></div>
+      <div class="lesson"><h4>07. Paint Shop Equipment</h4><p>Conveyors, spray booths, ovens, air handling units, filtration systems, pumps, robot systems and process utilities.</p></div>
+      <div class="lesson"><h4>08. Paint Shop Documentation</h4><p>SOP, process flow diagrams, control plans, inspection standards, check sheets and maintenance records.</p></div>
+     </div>
+     <div class="learning-note"><strong>Learning objective:</strong> Understand the purpose and quality requirements of each paint shop stage. Actual industrial operations must follow approved plant procedures, training and safety controls.</div>
+    </div>
+   </details>
+
+   <details class="module">
+    <summary>
+     <div class="module-heading">
+      <div class="module-number">02</div>
+      <div><h3>Pretreatment, ACED & PTED Systems</h3><small>Process stages • Chemistry concepts • Bath quality • Equipment overview</small></div>
+     </div>
+     <span class="plus">+</span>
+    </summary>
+    <div class="module-content">
+     <p>Learn the purpose of pretreatment and electro-deposition systems in automotive corrosion protection.</p>
+     <div class="lesson-grid">
+      <div class="lesson"><h4>Process Flow</h4><p>Incoming inspection, cleaning, rinsing, surface treatment, ED coating, post-rinsing and curing: purpose of each stage.</p></div>
+      <div class="lesson"><h4>Bath Chemistry Concepts</h4><p>pH, conductivity, concentration, temperature, contamination and chemical monitoring terminology.</p></div>
+      <div class="lesson"><h4>ED System Components</h4><p>Tank, circulation system, filtration, heat exchange, UF system, rinse stages and control instrumentation.</p></div>
+      <div class="lesson"><h4>Process Quality</h4><p>Coating coverage, film thickness, appearance, adhesion, corrosion protection and record keeping.</p></div>
+      <div class="lesson"><h4>Utilities Overview</h4><p>Water systems, compressed air, ventilation, electrical supply, heating and process monitoring.</p></div>
+      <div class="lesson"><h4>Documentation</h4><p>Bath analysis reports, chemical inventory, inspection logs, preventive maintenance and process audit records.</p></div>
+     </div>
+     <div class="learning-note">Chemical analysis and plant adjustments require authorized personnel, approved procedures and suitable protective equipment. This chapter is for conceptual learning.</div>
+    </div>
+   </details>
+
+   <details class="module" id="ev">
+    <summary>
+     <div class="module-heading">
+      <div class="module-number">03</div>
+      <div><h3>Electric Vehicle Engineering</h3><small>EV architecture • Battery concepts • Motor • Controller • Charging</small></div>
+     </div>
+     <span class="plus">+</span>
+    </summary>
+    <div class="module-content">
+     <p>Understand the major systems of electric two-wheelers and the engineering principles behind electric mobility.</p>
+     <div class="lesson-grid">
+      <div class="lesson"><h4>EV Architecture</h4><p>Vehicle layout, chassis, drivetrain, electrical architecture, mechanical systems and component integration.</p></div>
+      <div class="lesson"><h4>Battery Fundamentals</h4><p>Cell, module and pack concepts; capacity, voltage, energy, battery chemistry overview and battery terminology.</p></div>
+      <div class="lesson"><h4>Battery Management System</h4><p>BMS purpose, monitoring concepts, cell balancing principles, temperature monitoring and protection functions.</p></div>
+      <div class="lesson"><h4>Electric Motors</h4><p>BLDC and PMSM concepts, torque, speed, efficiency, motor ratings and drivetrain fundamentals.</p></div>
+      <div class="lesson"><h4>Motor Controller</h4><p>Controller purpose, power electronics concepts, motor control signals and system-level communication.</p></div>
+      <div class="lesson"><h4>Charging Systems</h4><p>Charging terminology, charger ratings, connectors, charging time concepts and electrical compatibility.</p></div>
+      <div class="lesson"><h4>Display & Instrumentation</h4><p>Speed display, battery indication, warning indicators, dashboard interfaces and sensor information.</p></div>
+      <div class="lesson"><h4>EV Quality Inspection</h4><p>Visual checks, component identification, documentation, traceability and non-invasive inspection concepts.</p></div>
+     </div>
+     <div class="learning-note">EV batteries and high-voltage circuits can be hazardous. This material is educational only. Do not open, modify, connect or test battery packs or high-voltage systems without qualified supervision and approved facilities.</div>
+    </div>
+   </details>
+
+   <details class="module" id="quality">
+    <summary>
+     <div class="module-heading">
+      <div class="module-number">04</div>
+      <div><h3>Quality Engineering & Quality Management</h3><small>7 QC tools • RCA • 8D • FMEA • SPC • Inspection</small></div>
+     </div>
+     <span class="plus">+</span>
+    </summary>
+    <div class="module-content">
+     <p>Learn how manufacturing organizations prevent defects, monitor process performance and improve customer satisfaction.</p>
+     <div class="lesson-grid">
+      <div class="lesson"><h4>Quality Fundamentals</h4><p>Quality assurance, quality control, customer requirements, specifications, inspection and process compliance.</p></div>
+      <div class="lesson"><h4>Seven QC Tools</h4><p>Check sheet, Pareto chart, cause-and-effect diagram, histogram, control chart, scatter diagram and stratification/flow chart concepts.</p></div>
+      <div class="lesson"><h4>Root Cause Analysis</h4><p>5 Why analysis, fishbone diagram, problem definition, evidence collection and corrective action verification.</p></div>
+      <div class="lesson"><h4>8D Problem Solving</h4><p>Team formation, problem description, containment, root cause, corrective action, validation and prevention.</p></div>
+      <div class="lesson"><h4>FMEA</h4><p>Failure mode, effects, causes, risk evaluation, action priority and preventive thinking.</p></div>
+      <div class="lesson"><h4>SPC Fundamentals</h4><p>Process variation, common and special causes, control chart purpose and process capability terminology.</p></div>
+      <div class="lesson"><h4>Inspection Systems</h4><p>Incoming inspection, in-process inspection, final inspection, sampling concepts and defect records.</p></div>
+      <div class="lesson"><h4>Quality Audits</h4><p>Layered process audit, process audit, product audit, compliance checks and corrective action tracking.</p></div>
+     </div>
+    </div>
+   </details>
+
+   <details class="module" id="mechanical">
+    <summary>
+     <div class="module-heading">
+      <div class="module-number">05</div>
+      <div><h3>Mechanical Maintenance Engineering</h3><small>Equipment • Pumps • Bearings • Motors • TPM</small></div>
+     </div>
+     <span class="plus">+</span>
+    </summary>
+    <div class="module-content">
+     <p>Understand the mechanical equipment used in manufacturing facilities and the purpose of maintenance systems.</p>
+     <div class="lesson-grid">
+      <div class="lesson"><h4>Machine Fundamentals</h4><p>Machine elements, shafts, couplings, gears, belts, chains and mechanical power transmission concepts.</p></div>
+      <div class="lesson"><h4>Pumps & Fluid Systems</h4><p>Centrifugal pump principles, flow, pressure, piping terminology, valves and filtration systems.</p></div>
+      <div class="lesson"><h4>Bearings & Lubrication</h4><p>Bearing types, lubrication purpose, wear concepts, inspection terminology and maintenance records.</p></div>
+      <div class="lesson"><h4>Compressed Air Systems</h4><p>Compressor purpose, air receivers, dryers, filters, pressure regulation and leak management concepts.</p></div>
+      <div class="lesson"><h4>Preventive Maintenance</h4><p>Maintenance schedules, checklists, equipment history, inspection planning and downtime tracking.</p></div>
+      <div class="lesson"><h4>TPM Fundamentals</h4><p>Autonomous maintenance, planned maintenance, focused improvement and equipment effectiveness concepts.</p></div>
+     </div>
+     <div class="learning-note">Industrial machinery inspection and maintenance must be carried out by trained, authorized personnel under site safety and isolation procedures.</div>
+    </div>
+   </details>
+
+   <details class="module" id="electrical">
+    <summary>
+     <div class="module-heading">
+      <div class="module-number">06</div>
+      <div><h3>Electrical, PLC & Industrial Automation</h3><small>Electrical fundamentals • Sensors • PLC • VFD • Robotics</small></div>
+     </div>
+     <span class="plus">+</span>
+    </summary>
+    <div class="module-content">
+     <p>Learn the basic concepts and roles of electrical and automation systems used in manufacturing.</p>
+     <div class="lesson-grid">
+      <div class="lesson"><h4>Electrical Fundamentals</h4><p>Voltage, current, resistance, power, AC and DC concepts, electrical symbols and terminology.</p></div>
+      <div class="lesson"><h4>Motors & Control Systems</h4><p>Induction motor concepts, motor ratings, control panels, contactors, relays and protection terminology.</p></div>
+      <div class="lesson"><h4>PLC Fundamentals</h4><p>Programmable logic controller purpose, inputs, outputs, logic concepts, ladder diagrams and industrial applications.</p></div>
+      <div class="lesson"><h4>VFD Fundamentals</h4><p>Variable frequency drive purpose, speed-control principles, motor compatibility and application overview.</p></div>
+      <div class="lesson"><h4>Industrial Sensors</h4><p>Proximity, photoelectric, temperature, pressure and position sensor principles and applications.</p></div>
+      <div class="lesson"><h4>Robotics Overview</h4><p>Industrial robot terminology, axes, work envelope, teach pendant concepts and automation applications.</p></div>
+     </div>
+     <div class="learning-note">Electrical panels, PLC equipment and robots are not DIY learning equipment. Practical work requires qualified instructors, approved training rigs and proper safety supervision.</div>
+    </div>
+   </details>
+
+   <details class="module" id="production">
+    <summary>
+     <div class="module-heading">
+      <div class="module-number">07</div>
+      <div><h3>Production & Manufacturing Management</h3><small>SOP • DWM • 5S • Kaizen • LPA • Team Management</small></div>
+     </div>
+     <span class="plus">+</span>
+    </summary>
+    <div class="module-content">
+     <p>Understand how production teams plan, monitor and improve manufacturing operations.</p>
+     <div class="lesson-grid">
+      <div class="lesson"><h4>Production Fundamentals</h4><p>Production planning, process flow, manpower planning, cycle time, takt time and output monitoring.</p></div>
+      <div class="lesson"><h4>SOP & Standard Work</h4><p>Standard operating procedures, work instructions, revision control, training records and compliance.</p></div>
+      <div class="lesson"><h4>DWM System</h4><p>Daily work management, shift review, target versus actual, abnormality tracking and action follow-up.</p></div>
+      <div class="lesson"><h4>5S & Kaizen</h4><p>Sort, Set in Order, Shine, Standardize and Sustain; continuous improvement and workplace organization.</p></div>
+      <div class="lesson"><h4>LPA & Process Discipline</h4><p>Layered process audit purpose, audit frequency concepts, checklist management and closure tracking.</p></div>
+      <div class="lesson"><h4>Team Management</h4><p>Communication, shift handover, work allocation, skill matrix, training and performance review.</p></div>
+     </div>
+    </div>
+   </details>
+
+   <details class="module">
+    <summary>
+     <div class="module-heading">
+      <div class="module-number">08</div>
+      <div><h3>Industrial Safety & Environment</h3><small>Safety culture • PPE • Risk awareness • Environment</small></div>
+     </div>
+     <span class="plus">+</span>
+    </summary>
+    <div class="module-content">
+     <p>Understand the importance of safe working practices, environmental responsibility and risk awareness in industrial facilities.</p>
+     <div class="lesson-grid">
+      <div class="lesson"><h4>Safety Fundamentals</h4><p>Hazard identification, risk awareness, safety communication and workplace safety culture.</p></div>
+      <div class="lesson"><h4>PPE Awareness</h4><p>Purpose and selection principles of helmets, safety footwear, eye protection, gloves and hearing protection.</p></div>
+      <div class="lesson"><h4>Emergency Preparedness</h4><p>Emergency communication, evacuation awareness, assembly points and reporting systems.</p></div>
+      <div class="lesson"><h4>Environmental Management</h4><p>Waste segregation, resource conservation, pollution prevention and environmental awareness.</p></div>
+     </div>
+    </div>
+   </details>
+
+  </div>
+ </div>
+</section>
+
+<section class="defects">
+ <div class="container">
+  <div class="section-tag">Paint Quality Reference</div>
+  <h2>Automotive Paint Defect Library.</h2>
+  <p class="intro">An introduction to common paint appearance and coating defects. Detailed inspection criteria depend on the applicable product specification.</p>
+  <div class="defect-grid">
+   <div class="defect"><strong>Orange Peel</strong><p>Uneven surface texture that resembles the surface of an orange.</p></div>
+   <div class="defect"><strong>Dust & Dirt</strong><p>Foreign particles visible within or on the coating surface.</p></div>
+   <div class="defect"><strong>Runs & Sags</strong><p>Excess coating accumulation that creates an uneven flow pattern.</p></div>
+   <div class="defect"><strong>Pinholes</strong><p>Small visible holes or openings in the coating film.</p></div>
+   <div class="defect"><strong>Blistering</strong><p>Raised areas or bubbles that affect coating appearance.</p></div>
+   <div class="defect"><strong>Colour Variation</strong><p>Visible difference in colour compared with the approved standard.</p></div>
+   <div class="defect"><strong>Fisheyes</strong><p>Small circular depressions in the coating surface.</p></div>
+   <div class="defect"><strong>Paint Sagging</strong><p>Local downward movement of wet coating before it cures.</p></div>
+   <div class="defect"><strong>Low Gloss</strong><p>Appearance with lower-than-required surface reflectivity.</p></div>
+   <div class="defect"><strong>Scratch Marks</strong><p>Visible surface damage affecting the coating appearance.</p></div>
+   <div class="defect"><strong>Cratering</strong><p>Small bowl-shaped depressions in the coating film.</p></div>
+   <div class="defect"><strong>Adhesion Failure</strong><p>Loss of bonding between coating layers or between coating and substrate.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="quality-tools" id="quality">
+ <div class="container">
+  <div class="section-tag">Quality Management Toolkit</div>
+  <h2>Seven Basic Quality Control Tools.</h2>
+  <p class="intro">Learn how basic quality tools help teams organize data, identify patterns, investigate problems and monitor processes.</p>
+  <div class="tool-grid">
+   <div class="tool"><strong>01. Check Sheet</strong><p>Structured data collection for defects, events and observations.</p></div>
+   <div class="tool"><strong>02. Pareto Chart</strong><p>Prioritization of important categories using frequency or impact.</p></div>
+   <div class="tool"><strong>03. Fishbone Diagram</strong><p>Organizing possible causes under categories such as Man, Machine, Method and Material.</p></div>
+   <div class="tool"><strong>04. Histogram</strong><p>Visualizing the distribution and spread of measured data.</p></div>
+   <div class="tool"><strong>05. Control Chart</strong><p>Monitoring process behaviour over time.</p></div>
+   <div class="tool"><strong>06. Scatter Diagram</strong><p>Exploring relationships between two variables.</p></div>
+   <div class="tool"><strong>07. Stratification</strong><p>Separating data into meaningful groups to identify patterns.</p></div>
+   <div class="tool"><strong>Additional: 8D</strong><p>A structured team-based approach to solving quality problems.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="career">
+ <div class="container">
+  <div class="section-tag">Professional Development</div>
+  <h2>Build Your Industrial Career Knowledge.</h2>
+  <p class="intro">These learning pathways can help learners understand the responsibilities and knowledge areas associated with different manufacturing roles.</p>
+  <div class="career-grid">
+   <div class="career-card"><h3>Production Associate</h3><p>Work instructions, standard work, process flow, safety awareness and production reporting.</p></div>
+   <div class="career-card"><h3>Quality Associate</h3><p>Inspection methods, defect identification, check sheets, traceability and quality documentation.</p></div>
+   <div class="career-card"><h3>Paint Shop Associate</h3><p>Paint process stages, appearance inspection, coating terminology and defect awareness.</p></div>
+   <div class="career-card"><h3>Maintenance Associate</h3><p>Equipment identification, maintenance documentation, preventive maintenance concepts and safety.</p></div>
+   <div class="career-card"><h3>Team Leader</h3><p>Shift coordination, manpower planning, target monitoring and team communication.</p></div>
+   <div class="career-card"><h3>Quality Zone Leader</h3><p>Quality performance monitoring, audit coordination, problem solving and corrective action follow-up.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="cta">
+ <div class="container">
+  <div class="tag" style="color:#d7efff">Magare Industries Learning Centre</div>
+  <h2>Knowledge Creates Better Engineering.</h2>
+  <p>Explore our product categories alongside technical learning resources for automotive, EV and industrial engineering.</p>
+  <a class="btn" href="products.html">EXPLORE PRODUCT CATALOGUE →</a>
+  <a class="btn" style="margin-left:8px" href="index.html">BACK TO HOMEPAGE →</a>
+ </div>
+</section>
+
+<div class="disclaimer container">
+ <strong>Educational Notice:</strong> This website provides general educational information. It is not a substitute for certified training, approved plant SOPs, equipment manuals, engineering validation or professional supervision. Chemical processes, industrial machinery, electrical systems and EV battery systems must only be handled by qualified and authorized personnel under applicable safety procedures.
 </div>
 
-<div class="card">
-<div class="icon">⚙️</div>
-<h2>Motor & Controller</h2>
-<p>Hub motor, controller, throttle aur electrical connections.</p>
-<button onclick="show('motor')">Explore Training</button>
-</div>
-
-<div class="card">
-<div class="icon">🎨</div>
-<h2>Automotive Paint Shop</h2>
-<p>ACED, ED coating, primer, basecoat, topcoat aur paint defects.</p>
-<button onclick="show('paint')">Explore Training</button>
-</div>
-
-<div class="card">
-<div class="icon">🔍</div>
-<h2>Quality Management</h2>
-<p>7 QC Tools, 5 Why, Kaizen, Poka-Yoke aur inspection methods.</p>
-<button onclick="show('quality')">Explore Training</button>
-</div>
-
-<div class="card">
-<div class="icon">🛠️</div>
-<h2>Assembly & Maintenance</h2>
-<p>Assembly process, tools, TPM aur preventive maintenance.</p>
-<button onclick="show('assembly')">Explore Training</button>
-</div>
-
-</div>
-
-<div class="detail" id="detail">
-<h2 id="heading"></h2>
-<div id="content"></div>
-<button onclick="closeDetail()">Close</button>
-</div>
-
-</div>
+</main>
 
 <footer>
-© 2026 Magare Industries | Industrial Learning Portal
+ <div class="container footer-row">
+  <div><strong>MAGARE INDUSTRIES</strong> — Advanced Technical Training Centre</div>
+  <div>Automotive | EV | Quality | Manufacturing</div>
+  <div>© 2026 Magare Industries</div>
+ </div>
 </footer>
-
-<script>
-const data={
-ev:{
-title:"EV Scooter Training",
-text:"<ul><li>EV scooter components introduction</li><li>Chassis and body assembly</li><li>Motor installation overview</li><li>Controller and wiring overview</li><li>Final inspection and testing</li></ul>"
-},
-battery:{
-title:"Battery Pack Training",
-text:"<ul><li>Battery cell introduction</li><li>Battery pack components</li><li>BMS working principle</li><li>Battery safety and inspection</li><li>Charging system overview</li></ul>"
-},
-motor:{
-title:"Motor & Controller Training",
-text:"<ul><li>Hub motor introduction</li><li>BLDC motor working principle</li><li>Controller functions</li><li>Throttle and display connections</li><li>Basic fault identification</li></ul>"
-},
-paint:{
-title:"Automotive Paint Shop Training",
-text:"<ul><li>ACED process overview</li><li>ED coating process</li><li>Primer, Basecoat and Topcoat</li><li>Paint defects and identification</li><li>Inspection and quality checks</li></ul>"
-},
-quality:{
-title:"Quality Management Training",
-text:"<ul><li>7 QC Tools</li><li>5 Why Analysis</li><li>Kaizen and Poka-Yoke</li><li>Process and product inspection</li><li>Root Cause Analysis</li></ul>"
-},
-assembly:{
-title:"Assembly & Maintenance Training",
-text:"<ul><li>Assembly line overview</li><li>Hand tools introduction</li><li>TPM basics</li><li>Preventive maintenance</li><li>Safety and SOP</li></ul>"
-}
-};
-
-function show(id){
- document.getElementById("heading").innerHTML=data[id].title;
- document.getElementById("content").innerHTML=data[id].text;
- document.getElementById("detail").style.display="block";
- document.getElementById("detail").scrollIntoView({behavior:"smooth"});
-}
-function closeDetail(){
- document.getElementById("detail").style.display="none";
-}
-</script>
 
 </body>
 </html>
